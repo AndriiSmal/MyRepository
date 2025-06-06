@@ -1,36 +1,36 @@
-# Concessione dei permessi alle cartelle di ìExchange admin centerî via PowerShell
+# Concessione dei permessi alle cartelle di ‚ÄúExchange admin center‚Äù via PowerShell
   
 ## **Fase di preparazione (Una volta):**
   
-1. Attivare líesecuzione dei script di PowerShell.
+1. Attivare l‚Äôesecuzione dei script di PowerShell.
 
     * Assicurati di avere i ruoli necessari di utente amministratore sulla macchina locale.
 
-2. Win+S -õ Cerca PowerShell -õ Tasto destro -õ eseguire come amministratore.
+2. Win+S -‚Ä∫ Cerca PowerShell -‚Ä∫ Tasto destro -‚Ä∫ eseguire come amministratore.
 
 3. Immettere il script per sbloccare lo scaricamento/esecuzione del script da internet:
 
 	   Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 
-* Proseguire inserendo la ìsî
+* Proseguire inserendo la ‚Äús‚Äù
 
 > Permette di eseguire solo i script locali firmati e blocca quelli scaricati da internet non firmati.
 
-4. Installa il modulo ìExchangeOnlineManagementî mettendo il script:
+4. Installa il modulo ‚ÄúExchangeOnlineManagement‚Äù mettendo il script:
 
 	   Install-Module -Name ExchangeOnlineManagement -Scope CurrentUser -Force
 
-	* Proseguire immettendo lí ìsî
+	* Proseguire immettendo l‚Äô ‚Äús‚Äù
 
 5. Verifica installazione modulo:
 
 	   Get-Module -ListAvailable ExchangeOnlineManagement
 
-	* Se non Ë presente provare a installare manualmente con commando:
+	* Se non √® presente provare a installare manualmente con commando:
 
 		  Import-Module ExchangeOnlineManagement
 
-	* In caso di alcuni errori di compatibilit‡ / mancanza delle funzionalit‡ provare ad aggiornare il modulo:
+	* In caso di alcuni errori di compatibilit√† / mancanza delle funzionalit√† provare ad aggiornare il modulo:
 
 	Update-Module -Name ExchangeOnlineManagement
 
@@ -50,9 +50,9 @@
 
 	   Add-PublicFolderClientPermission -Identity "\NomeCartellaPubblica" -User utente@dominio.com -AccessRights Ruolo
 
-> "\NomeCartellaPubblica" riferisce alla cartella pubblica del dominio; ìutente@dominio.comî che identifica la persona a cui vuoi dare il permesso; Ruolo vuole dire le privilegi che verranno assegnati.
+> "\NomeCartellaPubblica" riferisce alla cartella pubblica del dominio; ‚Äúutente@dominio.com‚Äù che identifica la persona a cui vuoi dare il permesso; Ruolo vuole dire le privilegi che verranno assegnati.
 
-- In caso se cíË bisogno di assegnare il permesso al gruppo di persone
+- In caso se c‚Äô√® bisogno di assegnare il permesso al gruppo di persone
 
    ##### **A una cartella con sottocartelle**
 
@@ -61,7 +61,7 @@
    Per inserire un gruppo di persone usare:
           
       -user "nomegruppo@domain.com"
-   Per inserire un elenco di persone concrete, quando non vuoi dare accesso a tutti i partecipanti del gruppo Ë possibile di fare in seguente modo:
+   Per inserire un elenco di persone concrete, quando non vuoi dare accesso a tutti i partecipanti del gruppo √® possibile di fare in seguente modo:
    
       $utenti = @(
       "utente1@dominio.com",
